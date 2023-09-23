@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'WORKSANS';
+		src: url(./assets/fonts/WorkSans-Medium.woff2);
+	}
+	@font-face {
+		font-family: 'BANANA';
+		src: url(./assets/fonts/great\ banana\ regular.woff2);
+	}
+}
+
+@layer components {
+	.span-clothing {
+		@apply flex justify-center items-center bg-slate-200 rounded-full border border-black border-opacity-0 hover:border-opacity-100 w-8 h-8 sm:w-10 sm:h-10;
+	}
+	.field {
+		@apply border border-gray-400 focus:border-blue-500 focus:outline-none p-1 rounded-md;
+	}
+	.button {
+		@apply bg-sky-600 py-1 px-5 rounded-lg hover:text-white
+	}
+	.label {
+		@apply font-semibold
+	}
+	.drop-area {
+		@apply border-2 border-dashed rounded w-full h-40 flex flex-col justify-center items-center
+	}
+	.dropButton {
+		@apply px-7 py-2 border-none outline-none bg-[#565aa8] text-white rounded-md cursor-pointer font-medium hover:bg-[#6b6fb6]
+	}
+	.preview {
+		@apply mt-3 w-full flex flex-col gap-3
+	}
+	.file-container {
+		@apply flex items-center px-4 py-1 border border-solid border-[#dddddd] rounded-md
+	}
+	.status {
+		@apply flex flex-col ml-4
+	}
+	.status-text {
+		@apply text-[#52ad5a] 
+	}
+}
+
+.text-shoppingCard {
+	text-align: left;
+	font-family: 'Franklin Gothic Medium', Black;
+	font-weight: bold;
+	font-size: 25px;
+	color: #6b6767;
+	text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	justify-items: center;
+	gap: 1rem;
+}
+
+.inside-input {
+	display: flex;
+	flex-direction: column;
+}
+
+.drop-area-active {
+	border: dashed 2px #618ac9;
+	color: #000000;
+	background-color: #b8d4fe;
+}
