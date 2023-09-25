@@ -55,7 +55,7 @@ const FormCard = () => {
 		return errors; 
 	};
 
-	return (
+		return (
 		<Form
 			onSubmit={onSubmit}
 			validate={validate}
@@ -70,7 +70,11 @@ const FormCard = () => {
 								name='firstName'
 								render={({ input, meta }) => (
 									<div>
-										<input {...input} className={`field w-full`} placeholder='First name' />
+										<input 
+											{...input} 
+											className={`field w-full`} 
+											placeholder='First name' 
+										/>
 										{meta.touched && meta.error && <div className='text-orange-600'>{meta.error}</div>}
 									</div>
 								)}
@@ -83,7 +87,11 @@ const FormCard = () => {
 								name='lastName'
 								render={({ input, meta }) => (
 									<div>
-										<input {...input} className='field w-full' placeholder='Last name'/>
+										<input 
+											{...input} 
+											className='field w-full' 
+											placeholder='Last name'
+										/>
 										{meta.touched && meta.error && <div className='text-orange-600'>{meta.error}</div>}
 									</div>
 								)}
@@ -127,9 +135,13 @@ const FormCard = () => {
 					</div>
 					<div className='inside-input my-4'>
 						<label className='label'>Upload document</label>
-						<Field name='uploadDocument'>{({ input }) => <InputDragAndDrop filedocs={(filedocs) => {
-							input.onChange(filedocs)
-						}} />}</Field>
+						<Field name='uploadDocument'>
+							{
+								({ input }) => <InputDragAndDrop filedocs={(filedocs) => {
+								input.onChange(filedocs)
+								}} />
+							}
+						</Field>
 					</div>
 					<button type='submit' disabled={submitting || pristine} className='button w-full mt-4'>
 						Register Account
